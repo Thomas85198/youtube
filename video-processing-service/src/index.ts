@@ -63,7 +63,7 @@ const processVideoHandler: RequestHandler = async (req, res) => {
 
 app.post("/process-video", processVideoHandler);
 
-const port = process.env.PORT || 3000;
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+const port = parseInt(process.env.PORT || "8080", 10);
+app.listen(port, "0.0.0.0", () => {
+  console.log(`Server running on port ${port}`);
 });
