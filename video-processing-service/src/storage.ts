@@ -1,12 +1,8 @@
-// 1. GCS file interactions
-// 2. Local file interactions
-
 import { Storage } from "@google-cloud/storage";
 import fs from "fs";
 import ffmpeg from "fluent-ffmpeg";
 
-setupDirectories();
-
+// 1. 先定義所有變數
 const storage = new Storage();
 const rawVideoBucketName = "luchienlin-yt-raw-videos";
 const processedVideoBucketName = "luchienlin-yt-processed-videos";
@@ -14,9 +10,7 @@ const processedVideoBucketName = "luchienlin-yt-processed-videos";
 const localRawVideoPath = "./raw-videos";
 const localProcessedVideoPath = "./processed-videos";
 
-/**
- * Creates the local directories for raw and processed videos.
- */
+// 2. 定義所有函數
 export function setupDirectories() {
   ensureDirectoryExistence(localRawVideoPath);
   ensureDirectoryExistence(localProcessedVideoPath);
